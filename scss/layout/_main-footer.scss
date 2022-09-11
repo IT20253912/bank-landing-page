@@ -1,0 +1,86 @@
+// **************************
+//       MAIN FOOTER
+// **************************
+
+.main-footer {
+    background-color: $dark-blue;
+    color: $white;
+
+    // ---- Container content ----
+    .container-content {
+        margin: 3rem auto;
+
+        @include for-medium-screens {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    // ---- Navbar ----
+    &__navbar {
+        margin: 3rem auto;
+        text-align: center;
+
+        @include for-medium-screens {
+            margin: 0;
+            text-align: left;
+            display: flex;
+            max-width: 30rem;
+        }
+
+        @include for-extra-large-screens {
+            margin-right: auto;
+            margin-left: 10rem;
+        }
+    }
+
+    // ---- Nav ----
+    &__nav {
+        list-style-type: none;
+
+        @include for-medium-screens {
+            &:first-of-type {
+                margin-right: 2rem;
+
+            }
+        }
+
+        @include for-extra-large-screens {
+            &:first-of-type {
+                margin-right: 10rem;
+
+            }
+        }
+
+        &-link {
+            color: $very-light-gray;
+            display: block;
+            margin: 1rem 0;
+            text-decoration: none;
+            transition: color .5s;
+
+            &:hover {
+                color: $lime-green;
+            }
+
+            &:active {
+                color: lighten($lime-green, 15%);
+            }
+        }
+
+    }
+
+    // ----- CTA -----
+    &__cta {
+        text-align: center;
+
+        @include for-extra-large-screens {
+            text-align: right;
+        }
+    }
+
+    // ----- Copy -----
+    &__copy {
+        margin-top: 3rem;
+    }
+}

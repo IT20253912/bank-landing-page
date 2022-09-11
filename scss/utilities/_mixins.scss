@@ -1,0 +1,31 @@
+// **************************
+//         MIXINS
+// **************************
+
+// Flexbox
+@mixin flexbox($flow: column nowrap,
+    $justify: center,
+    $align: center) {
+    display: flex;
+    flex-flow: $flow;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// Media queries
+@mixin for-medium-screens {
+    @media screen and (min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin for-large-screens {
+    @media screen and (min-width: 1020px) {
+        @content;
+    }
+}
+@mixin for-extra-large-screens {
+    @media screen and (min-width: 1200px) {
+        @content;
+    }
+}

@@ -1,0 +1,108 @@
+// **************************
+//       MAIN HEADER
+// **************************
+
+.main-header {
+    background-image: url(../../images/bg-intro-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center top;
+    padding-bottom: 8rem;
+
+    @include for-medium-screens {
+        background-image: url(../../images/bg-intro-desktop.svg);
+        background-size: cover;
+        background-position: 40vw top;
+        padding: 12rem 0;
+    }
+
+    @include for-extra-large-screens {
+        background-position: 40vw 65%;
+    }
+
+    @media screen and (min-width:1440px) {
+        background-position: 38vw 60%;
+        padding: 18rem 0;
+    }
+
+    // ------ Container content ------
+    .container-content {
+        @include for-medium-screens {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    // ------ Content ------
+    &__content {
+        max-width: 37rem;
+        text-align: center;
+
+        @include for-medium-screens {
+            text-align: left;
+            opacity: 0;
+            transform: translateX(-5rem);
+            animation: reveal 1s 1.5s ease-out forwards;
+        }
+
+        @include for-extra-large-screens {
+            max-width: 44rem;
+        }
+    }
+
+    // ---- Title ----
+    &__title {
+        font-size: 4rem;
+        line-height: 4.5rem;
+
+        @include for-extra-large-screens {
+            font-size: 5rem;
+            line-height: 6rem;
+        }
+    }
+
+    // --- Description---
+    &__description {
+        line-height: 2.4rem;
+        margin: 3rem auto;
+    }
+
+    // --- Mockup container ---
+    &__mockup-container {
+        order: -1;
+
+        @include for-medium-screens {
+            order: 1;
+            position: relative;
+            width: 50%;
+        }
+    }
+
+    // --- Mockup ---
+    &__mockup {
+        transform: translateY(-10%);
+        width: 100%;
+
+        @include for-medium-screens {
+            transform: none;
+            position: absolute;
+            bottom: -35rem;
+            left: 0;
+            width: 60rem;
+            opacity: 0;
+            transform: translateY(-5rem);
+            animation: reveal 2s 1.8s ease-out forwards;
+
+        }
+
+        @include for-extra-large-screens {
+            bottom: -45rem;
+            width: 70rem;
+        }
+
+        @media screen and (min-width:1440px) {
+            bottom: -50rem;
+            width: 80rem;
+        }
+    }
+}
